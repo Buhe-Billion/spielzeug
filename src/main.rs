@@ -1,6 +1,19 @@
 use std::io;
 
 fn
+calcLen
+(ins: String) -> (String,usize)
+{
+     let length = ins.len();
+     (ins,length)
+}
+
+fn
+calculate_length
+(ins: &String) -> usize
+{ins.len()}
+
+fn
 main
 ()
 {
@@ -11,6 +24,13 @@ main
 
     demo();
     readFromFiveElementArray();
+
+    let s1 = String::from("hello");
+    let (s2, len) = calcLen(s1);
+    println!("The length of '{s2}' is {len}.");
+
+    let len = calculate_length(&s2);
+    println!("The length of '{s2}' is {len}.");
 }
 
 fn
