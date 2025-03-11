@@ -1,5 +1,26 @@
 use std::io;
 
+fn 
+first_word
+//this version can be used with both &String and &str values.
+(ins: &str) -> &str
+//this version below is less general
+//(ins: &String) -> &str
+{
+
+	let byteRepresentation = ins.as_bytes();
+	
+	for (index, &item) in byteRepresentation.iter().enumerate()
+	{
+		if item == b' '
+		{
+			return &ins[..index];
+		}
+	}
+
+	&ins[..]
+}
+
 fn
 calcLen
 (ins: String) -> (String,usize)
@@ -31,6 +52,10 @@ main
 
     let len = calculate_length(&s2);
     println!("The length of '{s2}' is {len}.");
+
+    let brownFox = String::from("The quick brown fox jumped over the lazy dogs");
+    let erst = first_word(&brownFox);
+    println!("Erst Wort ist : {erst}");
 }
 
 fn
