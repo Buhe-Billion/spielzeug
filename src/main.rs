@@ -1,6 +1,15 @@
 use std::io;
 
-fn 
+impl Rectangle
+{
+	fn area(&self) -> u32 {self.width*self.height}
+}
+
+
+#[derive(Debug)]
+struct Rectangle { width: u32, height: u32,}
+
+fn
 first_word
 //this version can be used with both &String and &str values.
 (ins: &str) -> &str
@@ -9,7 +18,7 @@ first_word
 {
 
 	let byteRepresentation = ins.as_bytes();
-	
+
 	for (index, &item) in byteRepresentation.iter().enumerate()
 	{
 		if item == b' '
@@ -56,6 +65,9 @@ main
     let brownFox = String::from("The quick brown fox jumped over the lazy dogs");
     let erst = first_word(&brownFox);
     println!("Erst Wort ist : {erst}");
+
+	let rect1 = Rectangle {width: 30, height: 50,};
+	println!("The area of {rect1:?} is {}", rect1.area());
 }
 
 fn
