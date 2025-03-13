@@ -68,7 +68,8 @@ main
 
 	let rect1 = Rectangle {width: 30, height: 50,};
 	println!("The area of {rect1:?} is {}", rect1.area());
-	dbg!(&rect1);
+	dbg!(&rect1);	//	Please raed up on dbg and ownership
+	println!("{rect1:?} Check out the #derive atributes. We have a lot to learn on that");
 }
 
 fn
